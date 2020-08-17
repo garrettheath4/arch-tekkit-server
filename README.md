@@ -1,16 +1,20 @@
-**Application**
+## Application
 
 [Minecraft Server](https://www.minecraft.net/en-us/download/server/)
 
-**Description**
+## Description
 
 Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including—but not limited to—a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.
 
-**Build notes**
+## Attribution
+
+This project is based on binhex's [arch-minecraftserver](https://github.com/binhex/arch-minecraftserver).
+
+## Build notes
 
 Latest stable Minecraft release from Arch Linux AUR.
 
-**Usage**
+## Usage
 ```
 docker run -d \
     -p 25565:25565 \
@@ -24,12 +28,12 @@ docker run -d \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
-    binhex/arch-minecraftserver
+    garrettheath4/arch-tekkit-server
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
 
-**Example**
+### Example
 ```
 docker run -d \
     -p 25565:25565 \
@@ -43,10 +47,10 @@ docker run -d \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
-    binhex/arch-minecraftserver
+    garrettheath4/arch-tekkit-server
 ```
 
-**Notes**
+## Notes
 
 JAVA_INITIAL_HEAP_SIZE value and JAVA_MAX_HEAP_SIZE values must be a multiple of 1024 and greater than 2MB.
 
