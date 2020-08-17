@@ -1,5 +1,5 @@
 FROM binhex/arch-base:latest
-MAINTAINER binhex
+MAINTAINER garrettheath4
 
 # additional files
 ##################
