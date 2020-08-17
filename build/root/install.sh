@@ -57,10 +57,12 @@ source aur.sh
 # determine download url for minecraft java server from minecraft.net
 # use awk to match start and end of tags
 # grep to perl regex match download url
-minecraft_java_url=$(curly.sh -url https://www.minecraft.net/en-us/download/server | awk '/minecraft-version/,/<\/div>/' | grep -Po -m 1 'https://launcher.mojang.com[^"]+')
+tekkit_server_url='http://servers.technicpack.net/Technic/servers/tekkitmain/Tekkit_Server_v1.2.9g-2.zip'
 
-# download compiled minecraft java server
-curly.sh -of "/tmp/minecraft_server.jar" -url "${minecraft_java_url}"
+# download compiled tekkit server
+curly.sh -of "/tmp/tekkit_server.zip" -url "${tekkit_server_url}"
+
+#TODO: Unzip tekkit_server.zip and move the .jar from it (and other files?) into /srv/minecraft/ dir
 
 # move minecraft java server
 mkdir -p "/srv/minecraft" && mv "/tmp/minecraft_server.jar" "/srv/minecraft/"
